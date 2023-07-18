@@ -12,7 +12,7 @@ app.engine('html', es6Renderer);
 app.set('view', 'view');
 app.set('view engine', 'html');
 require('dotenv').config()
-const router = require('/router/router')
+const router = require('./routes/routes')
 app.use('/',router)
 app.listen(3000,()=>{
     console.log('Escuchando en el puerto 3000')
