@@ -1,5 +1,5 @@
 var sanitizer = require('sanitizer');
-const validadores = ["<script>","#"]
+const validadores = ["<script>","#","*/=","1=",""]
 
 const validaOpenai = async (tipo,expresion) =>{
     const { Configuration, OpenAIApi } = require("openai");
@@ -42,9 +42,7 @@ const validaInput = (expresion) =>{
 }
 const validaSanitizer = (expresion) => {
     expresion = sanitizer.escape(expresion); 
-    // expresion = sanitizer.normalizeRCData(expresion); 
-    // expresion = sanitizer.sanitize(expresion); 
-    // expresion = sanitizer.unescapeEntities(expresion); //no sirve
+    
     console.log(expresion)
     return(expresion)
 }

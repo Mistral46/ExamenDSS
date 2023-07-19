@@ -4,12 +4,11 @@ const cors = require('cors')
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
-app.use(express.static ('/public'))
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 es6Renderer = require('express-es6-template-engine')
 app.engine('html', es6Renderer);
-app.set('view', 'view');
+app.set('views', 'views');
 app.set('view engine', 'html');
 require('dotenv').config()
 const router = require('./routes/routes')
